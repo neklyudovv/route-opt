@@ -4,4 +4,4 @@ project(route_opt)
 set(CMAKE_CXX_STANDARD 20)
 
 # Добавляем исходные файлы проекта
-add_executable(route_opt src/main.cpp src/graph.cpp)
+add_executable(route_opt src/main.cpp src/graph.cpp src/dijkstra.cpp)
