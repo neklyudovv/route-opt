@@ -1,4 +1,4 @@
-#include "graph.h"
+#include "../include/graph.h"
 #include <iostream>
 
 void CityGraph::addRoad(int from, int to, int length, int traffic) {

@@ -1,7 +1,7 @@
 #include <iostream>
-#include "dijkstra.h"
-#include "graph.h"
-#include "utils/fileReader.h"
+#include "../include/dijkstra.h"
+#include "../include/graph.h"
+#include "../include/fileReader.h"
 
 int main() {
     FileReader reader;

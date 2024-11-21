@@ -1,4 +1,4 @@
-#include "dijkstra.h"
+#include "../include/dijkstra.h"
 #include <queue>
 #include <limits>
 #include <unordered_map>
