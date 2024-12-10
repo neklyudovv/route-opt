@@ -1,5 +1,4 @@
-#include "fileReader.h"
-#include "../graph.h"
+#include "../../include/fileReader.h"
 #include <fstream>
 
 FileReader::FileReader(){}

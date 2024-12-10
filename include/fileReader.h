@@ -2,7 +2,7 @@
 #define FILEREADER_H
 
 #include <string>
-#include "../graph.h"
+#include "graph.h"
 
 class FileReader {
 public:
