@@ -15,7 +15,7 @@ public:
                 : from(from), to(to), length(length), traffic(traffic) {}
     };
 
-    Graph(int numNodes) : cityMap() { numNodes = cityMap.size(); }
+    Graph() : cityMap() {}
     void addRoad(int from, int to, int length, int traffic);
     std::vector<Graph::Road> getGraph();
 

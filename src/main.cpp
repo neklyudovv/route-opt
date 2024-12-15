@@ -1,10 +1,10 @@
 #include <iostream>
 #include "../include/graph.h"
+#include "../include/fileReader.h"
 
 int main(){
-    Graph graph(5);
-    graph.addRoad(0, 1, 3, 1);
-    graph.addRoad(1, 2, 4, 1);
+    Reader reader;
+    Graph graph = reader.readGraph("../data/input.txt");
 
     std::vector<Graph::Road> asd = graph.getGraph();
 
