@@ -13,7 +13,9 @@ private:
     sf::RenderWindow& window;
     Graph& graph;
 
+    std::pair<int, int> calculateCoords(std::pair<int, int> coords);
     void drawPoints();
+    void drawRoads();
 };
 
 #endif

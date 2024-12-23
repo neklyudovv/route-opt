@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../include/graph.h"
 #include "../include/fileReader.h"
 #include "../include/visual.h"
@@ -11,15 +10,14 @@ int main(){
     std::vector<Graph::Road> asd = graph.getGraph();
     sf::RenderWindow window(sf::VideoMode(800, 600), "route opt");
     Visual visual(window, graph);
-    visual.render();
 
-    while (window.isOpen()) {
+    while (window.isOpen())
+    {
         sf::Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event))
             if (event.type == sf::Event::Closed)
                 window.close();
-        }
-        sf::sleep(sf::milliseconds(10));
+        visual.render();
     }
 
     return 0;
