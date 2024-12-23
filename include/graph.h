@@ -6,17 +6,17 @@
 class Graph {
 public:
     struct Road {
-        int from;
-        int to;
+        std::pair<int, int> from;
+        std::pair<int, int> to;
         int length;
         int traffic;
 
-        Road(int from, int to, int length, int traffic)
+        Road(std::pair<int, int> from, std::pair<int, int> to, int length, int traffic)
                 : from(from), to(to), length(length), traffic(traffic) {}
     };
 
     Graph() : cityMap() {}
-    void addRoad(int from, int to, int length, int traffic);
+    void addRoad(std::pair<int, int> from, std::pair<int, int> to, int length, int traffic);
     std::vector<Graph::Road> getGraph();
 
 private:

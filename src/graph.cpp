@@ -1,6 +1,6 @@
 #include "../include/graph.h"
 
-void Graph::addRoad(int from, int to, int length, int traffic){
+void Graph::addRoad(std::pair<int, int> from, std::pair<int, int> to, int length, int traffic){
     cityMap.emplace_back(from, to, length, traffic);
 }
 

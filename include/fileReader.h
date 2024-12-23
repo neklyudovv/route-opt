@@ -14,9 +14,10 @@ public:
         std::ifstream f(filename);
         if (!f.is_open())
             throw std::runtime_error("no such file");
-        int from, to, length, traffic;
-        while(f >> from >> to >> length >> traffic)
-            graph.addRoad(from, to, length, traffic);
+        int fromX, fromY, toX, toY, length, traffic;
+        while(f >> fromX >> fromY >> toX >> toY >> length >> traffic)
+            graph.addRoad(std::pair<int,int>(fromX, fromY),
+                    std::pair<int, int>(toX, toY), length, traffic);
         return graph;
     }
 };
