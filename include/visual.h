@@ -7,15 +7,19 @@
 class Visual {
 public:
     Visual(sf::RenderWindow& win, Graph& graph);
-    void render();
 
+    std::pair<int, int> calculateCoords(std::pair<int, int> coords);
+    void addSelectedPoint(std::pair<int, int> point);
+    void render();
 private:
     sf::RenderWindow& window;
     Graph& graph;
+    std::vector<std::pair<int, int>> selectedPoints;
 
-    std::pair<int, int> calculateCoords(std::pair<int, int> coords);
+    void drawSelectedPoints();
     void drawPoints();
     void drawRoads();
+    void highlightPath();
 };
 
 #endif

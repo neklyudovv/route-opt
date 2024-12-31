@@ -17,7 +17,8 @@ void Visual::render(){
 
     drawRoads();
     drawPoints();
-
+    drawSelectedPoints();
+    highlightPath();
 
     window.display();
 }
@@ -68,7 +69,6 @@ void Visual::drawRoads() {
     for (const auto& road : graph.getGraph()) {
         auto [startX, startY] = calculateCoords(road.from);
         auto [endX, endY] = calculateCoords(road.to);
-
         sf::Vertex line[] = {
                 sf::Vertex(sf::Vector2f(startX, startY)),
                 sf::Vertex(sf::Vector2f(endX, endY))
@@ -78,5 +78,37 @@ void Visual::drawRoads() {
         line[1].color = sf::Color::White;
 
         window.draw(line, 2, sf::Lines);
+    }
+}
+
+void Visual::addSelectedPoint(std::pair<int, int> point){
+    selectedPoints.push_back(point);
+}
+
+void Visual::drawSelectedPoints(){
+    for (const auto& point : selectedPoints) {
+        sf::CircleShape pointShape(5);
+        pointShape.setFillColor(sf::Color::Red);
+        auto [x, y] = calculateCoords(point);
+        pointShape.setPosition(x - pointShape.getRadius(), y - pointShape.getRadius());
+        window.draw(pointShape);
+    }
+}
+
+void Visual::highlightPath(){
+    if(selectedPoints.size()>2){
+        for (size_t i = 2; i < selectedPoints.size() - 1; ++i) {
+            auto [startX, startY] = calculateCoords(selectedPoints[i]);
+            auto [endX, endY] = calculateCoords(selectedPoints[i + 1]);
+            sf::Vertex line[] = {
+                    sf::Vertex(sf::Vector2f(startX, startY)),
+                    sf::Vertex(sf::Vector2f(endX, endY))
+            };
+
+            line[0].color = sf::Color::Red;
+            line[1].color = sf::Color::Red;
+
+            window.draw(line, 2, sf::Lines);
+        }
     }
 }
