@@ -23,7 +23,7 @@ void Handler::handleEvent(const sf::Event& event) {
 }
 
 int Handler::findClickedPoint(int mouseX, int mouseY) {
-    for (size_t i = 0; i < graph.getGraph().size(); ++i) {
+    for (int i = 0; i < graph.getGraph().size(); ++i) {
         auto point = graph.getGraph()[i];
         auto [x, y] = visual.calculateCoords(point.from);
 

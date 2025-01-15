@@ -51,7 +51,7 @@ std::pair<int, int> Visual::calculateCoords(std::pair<int, int> coords){
 }
 
 void Visual::drawPoints(){
-    for (size_t i = 0; i < graph.getGraph().size(); ++i){
+    for (int i = 0; i < graph.getGraph().size(); ++i){
         auto point = graph.getGraph()[i];
         sf::CircleShape pointShape(5), pointShapeTo(5);
         pointShape.setFillColor(sf::Color::Green);
@@ -97,7 +97,7 @@ void Visual::drawSelectedPoints(){
 
 void Visual::highlightPath(){
     if(selectedPoints.size()>2){
-        for (size_t i = 2; i < selectedPoints.size() - 1; ++i) {
+        for (int i = 2; i < selectedPoints.size() - 1; ++i) {
             auto [startX, startY] = calculateCoords(selectedPoints[i]);
             auto [endX, endY] = calculateCoords(selectedPoints[i + 1]);
             sf::Vertex line[] = {
