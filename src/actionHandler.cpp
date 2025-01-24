@@ -15,8 +15,6 @@ void Handler::handleEvent(const sf::Event& event) {
                 selectedPointB = clickedPoint;
                 visual.addSelectedPoint(graph.getGraph()[selectedPointB].from);
                 processSelected();
-                selectedPointA = -1;
-                selectedPointB = -1;
             }
         }
     }
